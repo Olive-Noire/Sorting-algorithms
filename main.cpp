@@ -13,11 +13,10 @@ int main() {
 
     }
 
-    std::vector<int> numbers2{1, 4, 1, 2, 7, 5, 2};
-    Sort::Counting(numbers2, Comparison::croissant<int>);
+    Sort::Selection(numbers, Comparison::croissant<int>);
 
     std::cout << "\n\nVoici le vecteur trie dans l'ordre croissant : \n";
-    for (int i : numbers2) {
+    for (int i : numbers) {
 
         std::cout << i << ' ';
 

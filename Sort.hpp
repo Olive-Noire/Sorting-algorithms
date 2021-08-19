@@ -22,7 +22,8 @@ namespace Sort {
 
     }
 
-    template <typename Type, typename Lambda> void Counting(std::vector<Type> &v, Lambda condition = Comparison::croissant<Type>) {
+    // Just vector of positif and integer number and croissant order
+    template <typename Type> void Counting(std::vector<Type> &v) {
 
         if (v.size() > 1) {
 
@@ -37,7 +38,7 @@ namespace Sort {
             {
 
                 std::size_t sum{0};
-                for (std::size_t i{0}; i < count.size(); i++) {
+                for (Type i{0}; i < count.size(); i++) {
 
                     sum += count[i];
                     count[i] = sum;
@@ -46,56 +47,31 @@ namespace Sort {
 
             } // free `sum`
 
-            for (std::size_t i{count.size()-2}; i > 0; i--) count[i+1] = count[i];
+            for (Type i{count.size()-2}; i > 0; i--) count[i+1] = count[i];
             count[1] = count[0];
 
             std::vector<Type> output;
-
             for (Type i{0}; i < count.size(); i++) {
 
                 if (i < count.size()-1) {
-                    
-                    Type temp{i};
-                    if (count[i] != count[i+1]) {
-                        
+
+                    std::size_t duplicates{0};
+                    while (i < count.size()-1 && count[i]+duplicates < count[i+1]) {
+
                         output.push_back(i);
-
-                    } else {
-
-                        output.push_back(temp);
-                        while (i < count.size()-1 && count[i] == count[i+1]) {
-                            
-                            output.push_back(temp);
-                            i++;
-
-                        }
+                        duplicates++;
 
                     }
 
                 } else {
 
-                    if (count[i] == count[i-1]) {
-
-                        output.push_back(i);
-
-                    } else {
-
-                        output.push_back(i-1);
-
-                    }
+                    output.push_back(i);
 
                 }
 
             }
 
             v = output;
-
-            std::cout << "Voici le vecteur : \n";
-            for (Type i{0}; i < count.size(); i++) {
-
-                std::cout << i << " : " << count[i] << std::endl;
-
-            }
 
         }
 

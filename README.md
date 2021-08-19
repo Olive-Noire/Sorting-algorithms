@@ -21,7 +21,7 @@ Les algorithmes à implémenter :
 - Quick
 - Optimal
 
-Il y a aussi des lambda de comparaisons déjà implémentées :
+Il y a aussi des lambdas de comparaisons déjà implémentées :
 - Croissant
 - Decroissant
 
