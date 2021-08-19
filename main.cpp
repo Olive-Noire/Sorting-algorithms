@@ -13,7 +13,7 @@ int main() {
 
     }
 
-    Sort::Selection(numbers, Comparison::croissant<int>);
+    Sort::Insertion(numbers, Comparison::croissant<int>);
 
     std::cout << "\n\nVoici le vecteur trie dans l'ordre croissant : \n";
     for (int i : numbers) {
@@ -21,8 +21,6 @@ int main() {
         std::cout << i << ' ';
 
     }
-
-    std::cout << "\nresultat attendu : 1 1 2 2 4 5 7";
 
     std::cin.get();
 

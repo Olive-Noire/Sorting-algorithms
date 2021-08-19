@@ -2,12 +2,12 @@
 Un exercice d'algorithmique que me suis fixé : implémenter le plus d'algorithmes en C++ (itératifs et sur place) !
 
 Les algorithmes implémentés :
+- Counting
 - Selection
+- Insertion
 - Bubble
 
 Les algorithmes en cours d'implémentation :
-- Counting
-- Insertion
 
 Les algorithmes à implémenter :
 - Cube

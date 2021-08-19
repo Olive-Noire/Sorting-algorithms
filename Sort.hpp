@@ -22,7 +22,7 @@ namespace Sort {
 
     }
 
-    // Just vector of positif and integer number and croissant order
+    // Just vector of positif and integer numbers and croissant order
     template <typename Type> void Counting(std::vector<Type> &v) {
 
         if (v.size() > 1) {
@@ -137,14 +137,13 @@ namespace Sort {
 
             for (std::size_t i{1}; i < v.size(); i++) {
 
-                for (std::size_t j{i-1}; j > 0; j--) {
+                for (std::size_t j{i}; j > 0; j--) {
 
-                    if (condition(v[i], v[j])) {
+                    if (condition(v[i-(i-j)], v[j-1])) {
 
-                    
-                        break;
+                        std::swap(v[j-1], v[i-(i-j)]);
 
-                    }
+                    } else break;
 
                 }
 
