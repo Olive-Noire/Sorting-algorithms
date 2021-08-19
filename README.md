@@ -18,7 +18,6 @@ Les algorithmes à implémenter :
 - Heap
 - Tim
 - Merge
-- Fusion
 - Quick
 - Optimal
 

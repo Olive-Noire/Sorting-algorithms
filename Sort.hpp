@@ -146,12 +146,6 @@ namespace Sort {
 
     }
 
-    template <typename Type, typename Lambda> void Fusion(std::vector<Type> &v, Lambda condition = Comparison::croissant<Type>) {
-
-
-
-    }
-
     template <typename Type, typename Lambda> void Quick(std::vector<Type> &v, Lambda condition = Comparison::croissant<Type>) {
 
 
