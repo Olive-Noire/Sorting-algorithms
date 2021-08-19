@@ -1,5 +1,5 @@
 # Sorting Algorithms
-Un exercice d'algorithmique que me suis fixé : implémenter le plus d'algorithmes en C++ !
+Un exercice d'algorithmique que me suis fixé : implémenter le plus d'algorithmes en C++ (itératifs et sur place) !
 
 Les algorithmes implémentés :
 - Selection
