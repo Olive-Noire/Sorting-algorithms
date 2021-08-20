@@ -213,11 +213,29 @@ namespace Sort {
 
     }
 
-    template <typename Type, typename Lambda> void Stooge(std::vector<Type> &v, Lambda condition = Comparison::croissant<Type>) {
+    template <typename Type, typename Lambda> void Stooge(std::vector<Type> &v, Lambda condition = Comparison::croissant<Type>, std::size_t i = 0, std::size_t j = 0) {
 
         if (v.size() > 1) {
 
-            
+            if (j == 0) j = v.size()-1;
+
+            if (!condition(v[i], v[j])) {
+
+                Type swap{v[i]};
+                v[i] = v[j];
+                v[j] = swap;
+
+            }
+
+            if ((j-i+1) > 2) {
+
+                std::size_t temp{(j-i+1)/3};
+
+                Sort::Stooge(v, condition, i, j-temp);
+                Sort::Stooge(v, condition, i+temp, j);
+                Sort::Stooge(v, condition, i, j-temp);
+
+            }
 
         }
 

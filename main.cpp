@@ -13,7 +13,7 @@ int main() {
 
     }
 
-    Sort::Gnome(numbers, Comparison::croissant<int>);
+    Sort::Stooge(numbers, Comparison::croissant<int>);
 
     std::cout << "\n\nVoici le vecteur trie dans l'ordre croissant : \n";
     for (int i : numbers) {
