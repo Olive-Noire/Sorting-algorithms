@@ -14,6 +14,7 @@ namespace Comparison {
 
 namespace Sort {
 
+    // Use std::rand(std::time(0)); before first using
     template <typename Type, typename Lambda> void Bogo(std::vector<Type> &v, Lambda condition = Comparison::croissant<Type>) {
 
         if (v.size() > 1) {
@@ -433,31 +434,44 @@ namespace Sort {
 
         if (v.size() > 1) {
 
-            for (std::size_t i{0}; i < v.size(); i++) {
+            bool swapped{true};
+            std::size_t start{0}, end{v.size()-1};
 
-                for (std::size_t j{i}; j < v.size()-1-i; j++) {
+            while (swapped) {
 
-                    if (!condition(v[j], v[j+1])) {
+                swapped = false;
 
-                        Type swap{v[j]};
-                        v[j] = v[j+1];
-                        v[j+1] = swap;
+                for (std::size_t i{start}; i < end; i++) {
+
+                    if (!condition(v[i], v[i+1])) {
+
+                        Type swap{v[i]};
+                        v[i] = v[i+1];
+                        v[i+1] = swap;
+
+                        swapped = true;
+
+                    }
+
+                }
+
+                end--;
+
+                for (std::size_t i{end}; i > start; i--) {
+
+                    if (condition(v[i], v[i-1])) {
+
+                        Type swap{v[i]};
+                        v[i] = v[i-1];
+                        v[i-1] = swap;
+
+                        swapped = true;
 
                     }
 
                 }
 
-                for (std::size_t j{v.size()-1-i}; j > 0; j--) {
-
-                    if (condition(v[j], v[j-1])) {
-
-                        Type swap{v[j]};
-                        v[j] = v[j-1];
-                        v[j-1] = swap;
-
-                    }
-
-                }
+                start++;
 
             }
 
