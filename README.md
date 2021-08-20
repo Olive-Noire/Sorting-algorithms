@@ -41,3 +41,5 @@ Sources :
 - https://www.netlib.org/utk/lsi/pcwLSI/text/node301.html
 - https://www.geeksforgeeks.org/counting-sort/
 - https://www.youtube.com/watch?v=OKd534EWcdk
+- https://www.youtube.com/watch?v=n2MLjGeK7qA&ab_channel=GeeksforGeeks
+- https://en.wikipedia.org/wiki/Gnome_sort

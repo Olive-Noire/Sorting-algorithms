@@ -295,7 +295,24 @@ namespace Sort {
 
         if (v.size() > 1) {
 
-            
+            std::size_t pos{0}; // artificial index
+            while (pos < v.size()) {
+
+                if (pos == 0 || !condition(v[pos], v[pos-1])) {
+
+                    pos++;
+
+                } else {
+
+                    Type swap{v[pos]};
+                    v[pos] = v[pos-1];
+                    v[pos-1] = swap;
+
+                    pos--;
+
+                }
+
+            }
 
         }
 
