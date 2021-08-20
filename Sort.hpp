@@ -323,7 +323,34 @@ namespace Sort {
 
         if (v.size() > 1) {
 
-            
+            bool swapped{true};
+            std::size_t interval{v.size()};
+
+            while (interval > 1 || swapped) {
+
+                interval = static_cast<std::size_t>(interval/1.3);
+                if (interval == 0) interval++;
+
+                std::size_t i{0};
+                swapped = false;
+
+                while (i < v.size()-interval) {
+
+                    if (!condition(v[i], v[i+interval])) {
+
+                        Type swap{v[i]};
+                        v[i] = v[i+interval];
+                        v[i+interval] = swap;
+
+                        swapped = true;
+
+                    }
+
+                    i++;
+
+                }
+
+            }
 
         }
 

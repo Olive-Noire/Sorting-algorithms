@@ -15,6 +15,7 @@ Les algorithmes implémentés :
 - Selection
 - Insertion
 - Bubble
+- Comb
 - Gnome
 - Parity
 
@@ -26,7 +27,6 @@ Les algorithmes à implémenter :
 - Radix
 - Bucket
 - Shell
-- Comb
 - Introspective
 - CocktailShaker
 - Bitonic
@@ -61,3 +61,4 @@ Sources :
 - https://fr.wikipedia.org/wiki/Tri_%C3%A0_peigne
 - https://fr.wikipedia.org/wiki/Tri_pair-impair
 - https://fr.wikipedia.org/wiki/Tri_faire-valoir
+- https://fr.wikipedia.org/wiki/Tri_bitonique
