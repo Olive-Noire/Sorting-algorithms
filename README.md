@@ -11,10 +11,12 @@ Avec les propriétés suivantes :
 Les algorithmes implémentés :
 - Bogo
 - Counting
+- Stooge
 - Selection
 - Insertion
 - Bubble
 - Gnome
+- Parity
 
 Les algorithmes en cours d'implémentation :
 - Tree (avec définition d'une structure de donnée adéquate)
@@ -24,9 +26,7 @@ Les algorithmes à implémenter :
 - Radix
 - Bucket
 - Shell
-- Stooge
 - Comb
-- Parity
 - Introspective
 - CocktailShaker
 - Bitonic

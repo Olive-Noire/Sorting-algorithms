@@ -18,17 +18,17 @@ namespace Sort {
 
         if (v.size() > 1) {
 
-            bool isSort{true};
+            bool sorted{true};
 
             do {
 
                 for (std::size_t i{0}; i < v.size()-1; i++) {
 
-                    if (!condition(v[i], v[i+1])) isSort = false;
+                    if (!condition(v[i], v[i+1])) sorted = false;
 
                 }
 
-                if (!isSort) {
+                if (!sorted) {
 
                     for (Type& t : v) {
 
@@ -42,7 +42,7 @@ namespace Sort {
 
                 }
 
-            } while (!isSort);
+            } while (!sorted);
 
 
         }
@@ -360,7 +360,41 @@ namespace Sort {
 
         if (v.size() > 1) {
 
-            
+            bool sorted{false};
+
+            while (!sorted) {
+
+                sorted = true;
+
+                for (std::size_t i{0}; i < v.size()-1; i += 2) {
+
+                    if (!condition(v[i], v[i+1])) {
+
+                        Type swap{v[i]};
+                        v[i] = v[i+1];
+                        v[i+1] = swap;
+
+                        sorted = false;
+
+                    }
+
+                }
+
+                for (std::size_t i{1}; i < v.size()-1; i += 2) {
+
+                    if (!condition(v[i], v[i+1])) {
+
+                        Type swap{v[i]};
+                        v[i] = v[i+1];
+                        v[i+1] = swap;
+
+                        sorted = false;
+
+                    }
+
+                }
+
+            }
 
         }
 
