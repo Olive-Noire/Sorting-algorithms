@@ -4,6 +4,7 @@
 #include <unordered_map>
 #include <cstdlib>
 #include <vector>
+#include <cmath>
 
 namespace Comparison {
 
@@ -420,16 +421,6 @@ namespace Sort {
 
     }
 
-    template <typename Type, typename Lambda> void Introspective(std::vector<Type> &v, Lambda condition = Comparison::croissant<Type>) {
-
-        if (v.size() > 1) {
-
-
-
-        }
-
-    }
-
     template <typename Type, typename Lambda> void Cocktail(std::vector<Type> &v, Lambda condition = Comparison::croissant<Type>) {
 
         if (v.size() > 1) {
@@ -531,16 +522,66 @@ namespace Sort {
 
             std::size_t pivot{v.size()/2};
 
-        }
+            std::vector<Type> left, right;
 
+            for (std::size_t i{0}; i < v.size(); i++) {
+
+                if (i != pivot) {
+
+                    if (condition(v[i], v[pivot])) {
+
+                        left.push_back(v[i]);
+
+                    } else {
+
+                        right.push_back(v[i]);
+                        
+                    }
+
+                }
+
+            }
+
+            Sort::Quick(left, condition);
+            Sort::Quick(right, condition);
+
+            Type middle{v[pivot]};
+
+            for (std::size_t i{0}; i < left.size(); i++) v[i] = left[i];
+            v[left.size()] = middle;
+            for (std::size_t i{0}; i < right.size(); i++) v[left.size()+1+i] = right[i];
+
+        }
 
     }
 
-    template <typename Type, typename Lambda> void Optimal(std::vector<Type> &v, Lambda condition = Comparison::croissant<Type>) {
+    template <typename Type, typename Lambda> void Intropspective(std::vector<Type> &v, Lambda condition = Comparison::croissant<Type>, std::size_t limit = 0) {
 
         if (v.size() > 1) {
 
-            
+            if (limit == 0) limit = 2*static_cast<std::size_t>(std::log2(v.size()));
+
+            Type pivot{v[v.size()/2]};
+            std::size_t min{0}, max{v.size()};
+
+            // while () {}
+
+            /*
+            Répéter jusqu'à ce que CurMin > CurMax
+                Tant que A[CurMin] < Pivot, CurMin := CurMin + 1
+                Tant que A[CurMax] > Pivot, CurMax := CurMax - 1
+                Si CurMin < CurMax alors Echanger(A[CurMin], A[CurMax])
+                CurMin = CurMin + 1
+                CurMax = CurMax - 1
+
+            Si CurMax > Min
+                Si ProfondeurLimite = 1 alors faire Heapsort(A[Min..CurMax])
+                Sinon faire Introsort(A[Min..CurMax], ProfondeurLimite - 1)
+
+            Si CurMin < Max
+                Si ProfondeurLimite = 1 alors faire Heapsort(A[CurMin..Max])
+                Sinon faire Introsort(A[CurMin..Max], ProfondeurLimite - 1)
+            */
 
         }
 

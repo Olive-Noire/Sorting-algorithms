@@ -19,23 +19,22 @@ Les algorithmes implémentés :
 - Gnome
 - Parity
 - Cocktail
+- Quick
 
 Les algorithmes en cours d'implémentation :
 - Tree (avec définition d'une structure de donnée adéquate)
+- Introspective
 
 Les algorithmes à implémenter :
 - Cube
 - Radix
 - Bucket
 - Shell
-- Introspective
 - Bitonic
 - Smooth
 - Heap
 - Tim
 - Merge
-- Quick
-- Optimal
 
 Il y a aussi des lambdas de comparaisons déjà implémentées :
 - Croissant
@@ -63,3 +62,4 @@ Sources :
 - https://fr.wikipedia.org/wiki/Tri_faire-valoir
 - https://fr.wikipedia.org/wiki/Tri_bitonique
 - https://fr.wikipedia.org/wiki/Tri_cocktail
+- https://fr.wikipedia.org/wiki/Tri_rapide
