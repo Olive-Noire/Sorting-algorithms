@@ -1,5 +1,12 @@
 # Sorting Algorithms
-Un exercice d'algorithmique que me suis fixé : implémenter le plus d'algorithmes en C++ (itératifs et sur place) !
+Un exercice d'algorithmique que me suis fixé : implémenter le plus d'algorithmes en C++ !
+
+Avec les propriétés suivantes :
+- Itératif
+- Sur place
+- Interne
+- Stable ou instable
+- Non parallèle
 
 Les algorithmes implémentés :
 - Bogo
@@ -7,18 +14,23 @@ Les algorithmes implémentés :
 - Selection
 - Insertion
 - Bubble
+- Gnome
 
 Les algorithmes en cours d'implémentation :
-- Tree
+- Tree (avec définition d'une structure de donnée adéquate)
 
 Les algorithmes à implémenter :
 - Cube
 - Radix
 - Bucket
 - Shell
-- Gnome
+- Stooge
+- Comb
+- Parity
+- Introspective
 - CocktailShaker
 - Bitonic
+- Smooth
 - Heap
 - Tim
 - Merge
@@ -42,4 +54,10 @@ Sources :
 - https://www.geeksforgeeks.org/counting-sort/
 - https://www.youtube.com/watch?v=OKd534EWcdk
 - https://www.youtube.com/watch?v=n2MLjGeK7qA&ab_channel=GeeksforGeeks
+- https://fr.wikipedia.org/wiki/Algorithme_de_tri
 - https://en.wikipedia.org/wiki/Gnome_sort
+- https://fr.wikipedia.org/wiki/Introsort
+- https://fr.wikipedia.org/wiki/Smoothsort
+- https://fr.wikipedia.org/wiki/Tri_%C3%A0_peigne
+- https://fr.wikipedia.org/wiki/Tri_pair-impair
+- https://fr.wikipedia.org/wiki/Tri_faire-valoir

@@ -213,6 +213,16 @@ namespace Sort {
 
     }
 
+    template <typename Type, typename Lambda> void Stooge(std::vector<Type> &v, Lambda condition = Comparison::croissant<Type>) {
+
+        if (v.size() > 1) {
+
+            
+
+        }
+
+    }
+
     template <typename Type, typename Lambda> void Selection(std::vector<Type> &v, Lambda condition = Comparison::croissant<Type>) {
 
         if (v.size() > 1) {
@@ -291,6 +301,16 @@ namespace Sort {
 
     }
 
+    template <typename Type, typename Lambda> void Comb(std::vector<Type> &v, Lambda condition = Comparison::croissant<Type>) {
+
+        if (v.size() > 1) {
+
+            
+
+        }
+
+    }
+
     template <typename Type, typename Lambda> void Gnome(std::vector<Type> &v, Lambda condition = Comparison::croissant<Type>) {
 
         if (v.size() > 1) {
@@ -318,6 +338,26 @@ namespace Sort {
 
     }
 
+    template <typename Type, typename Lambda> void Parity(std::vector<Type> &v, Lambda condition = Comparison::croissant<Type>) {
+
+        if (v.size() > 1) {
+
+            
+
+        }
+
+    }
+
+    template <typename Type, typename Lambda> void Introspective(std::vector<Type> &v, Lambda condition = Comparison::croissant<Type>) {
+
+        if (v.size() > 1) {
+
+            
+
+        }
+
+    }
+
     template <typename Type, typename Lambda> void CocktailShaker(std::vector<Type> &v, Lambda condition = Comparison::croissant<Type>) {
 
         if (v.size() > 1) {
@@ -329,6 +369,16 @@ namespace Sort {
     }
 
     template <typename Type, typename Lambda> void Bitonic(std::vector<Type> &v, Lambda condition = Comparison::croissant<Type>) {
+
+        if (v.size() > 1) {
+
+            
+
+        }
+
+    }
+
+    template <typename Type, typename Lambda> void Smooth(std::vector<Type> &v, Lambda condition = Comparison::croissant<Type>) {
 
         if (v.size() > 1) {
 
