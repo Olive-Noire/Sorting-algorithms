@@ -423,17 +423,43 @@ namespace Sort {
 
         if (v.size() > 1) {
 
-            
+
 
         }
 
     }
 
-    template <typename Type, typename Lambda> void CocktailShaker(std::vector<Type> &v, Lambda condition = Comparison::croissant<Type>) {
+    template <typename Type, typename Lambda> void Cocktail(std::vector<Type> &v, Lambda condition = Comparison::croissant<Type>) {
 
         if (v.size() > 1) {
 
-            
+            for (std::size_t i{0}; i < v.size(); i++) {
+
+                for (std::size_t j{i}; j < v.size()-1-i; j++) {
+
+                    if (!condition(v[j], v[j+1])) {
+
+                        Type swap{v[j]};
+                        v[j] = v[j+1];
+                        v[j+1] = swap;
+
+                    }
+
+                }
+
+                for (std::size_t j{v.size()-1-i}; j > 0; j--) {
+
+                    if (condition(v[j], v[j-1])) {
+
+                        Type swap{v[j]};
+                        v[j] = v[j-1];
+                        v[j-1] = swap;
+
+                    }
+
+                }
+
+            }
 
         }
 
