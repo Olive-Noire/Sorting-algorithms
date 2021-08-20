@@ -2,27 +2,64 @@
 #define DEF_SORT_HPP
 
 #include <unordered_map>
+#include <cstdlib>
 #include <vector>
 
 namespace Comparison {
 
-    template <typename Type>
-    auto croissant{[](Type l, Type r) -> bool { return l < r; }};
-
-    template <typename Type>
-    auto decroissant{[](Type l, Type r) -> bool { return l > r; }};
+    template <typename Type> auto croissant{[](Type l, Type r) -> bool { return l < r; }};
+    template <typename Type> auto decroissant{[](Type l, Type r) -> bool { return l > r; }};
 
 }
 
 namespace Sort {
 
-    template <typename Type, typename Lambda> void Cube(std::vector<Type> &v, Lambda condition = Comparison::croissant<Type>) {
+    template <typename Type, typename Lambda> void Bogo(std::vector<Type> &v, Lambda condition = Comparison::croissant<Type>) {
+
+        if (v.size() > 1) {
+
+            bool isSort{true};
+
+            do {
+
+                for (std::size_t i{0}; i < v.size()-1; i++) {
+
+                    if (!condition(v[i], v[i+1])) isSort = false;
+
+                }
+
+                if (!isSort) {
+
+                    for (Type& t : v) {
+
+                        std::size_t r{rand()%v.size()};
+
+                        Type swap{v[r]};
+                        v[r] = t;
+                        t = swap;
+
+                    }
+
+                }
+
+            } while (!isSort);
 
 
+        }
 
     }
 
-    // Just vector of positif and integer numbers and croissant order
+    template <typename Type, typename Lambda> void Cube(std::vector<Type> &v, Lambda condition = Comparison::croissant<Type>) {
+
+        if (v.size() > 1) {
+
+            
+
+        }
+
+    }
+
+    // Just vectors of positifs numbers and croissant order
     template <typename Type> void Counting(std::vector<Type> &v) {
 
         if (v.size() > 1) {
@@ -79,25 +116,100 @@ namespace Sort {
 
     template <typename Type, typename Lambda> void Radix(std::vector<Type> &v, Lambda condition = Comparison::croissant<Type>) {
 
+        if (v.size() > 1) {
 
+            
+
+        }
 
     }
 
     template <typename Type, typename Lambda> void Bucket(std::vector<Type> &v, Lambda condition = Comparison::croissant<Type>) {
 
+        if (v.size() > 1) {
 
+            
+
+        }
 
     }
 
     template <typename Type, typename Lambda> void Shell(std::vector<Type> &v, Lambda condition = Comparison::croissant<Type>) {
 
+        if (v.size() > 1) {
 
+            
+
+        }
 
     }
 
     template <typename Type, typename Lambda> void Tree(std::vector<Type> &v, Lambda condition = Comparison::croissant<Type>) {
 
+        if (v.size() > 1) {
 
+            struct Binary_Tree {
+
+                public:
+
+                Type value;
+
+                Binary_Tree *parent{nullptr};
+
+                std::pair<Binary_Tree*, Binary_Tree*> branches{nullptr, nullptr};
+
+            };
+
+            Binary_Tree tree{v[v.size()/2]};
+
+            for (std::size_t i{0}; i < v.size(); i++) {
+
+                if (i != v.size()/2) {
+
+                    Binary_Tree &current{tree};
+
+                    while (condition(v[i], v[v.size()/2])) {
+
+                        if (current.branches.first == nullptr) {
+
+                            current.branches.first = new Binary_Tree{v[i], &current};
+                            break;
+
+                        } else {
+
+                            current = *current.branches.first;
+
+                        }
+
+                    }
+
+                    while (!condition(v[i], v[v.size()/2])) {
+
+                        if (current.branches.second == nullptr) {
+
+                            current.branches.second = new Binary_Tree{v[i], &current};
+                            break;
+
+                        } else {
+
+                            current = *current.branches.second;
+
+                        }
+
+                    }
+
+                }
+
+            }
+
+            Binary_Tree &order{tree};
+            while (order.parent != nullptr) order = *order.parent;
+
+            while (order.branches.second != nullptr) order = *order.branches.second;
+
+            // Work in progress
+
+        }
 
     }
 
@@ -141,7 +253,9 @@ namespace Sort {
 
                     if (condition(v[i-(i-j)], v[j-1])) {
 
-                        std::swap(v[j-1], v[i-(i-j)]);
+                        Type swap{v[j-1]};
+                        v[j-1] = v[i-(i-j)];
+                        v[i-(i-j)] = swap;
 
                     } else break;
 
@@ -177,15 +291,53 @@ namespace Sort {
 
     }
 
+    template <typename Type, typename Lambda> void Gnome(std::vector<Type> &v, Lambda condition = Comparison::croissant<Type>) {
+
+        if (v.size() > 1) {
+
+            
+
+        }
+
+    }
+
+    template <typename Type, typename Lambda> void CocktailShaker(std::vector<Type> &v, Lambda condition = Comparison::croissant<Type>) {
+
+        if (v.size() > 1) {
+
+            
+
+        }
+
+    }
+
+    template <typename Type, typename Lambda> void Bitonic(std::vector<Type> &v, Lambda condition = Comparison::croissant<Type>) {
+
+        if (v.size() > 1) {
+
+            
+
+        }
+
+    }
+
     template <typename Type, typename Lambda> void Heap(std::vector<Type> &v, Lambda condition = Comparison::croissant<Type>) {
 
+        if (v.size() > 1) {
 
+            
+
+        }
 
     }
 
     template <typename Type, typename Lambda> void Tim(std::vector<Type> &v, Lambda condition = Comparison::croissant<Type>) {
 
+        if (v.size() > 1) {
 
+            
+
+        }
 
     }
 
@@ -197,13 +349,22 @@ namespace Sort {
 
     template <typename Type, typename Lambda> void Quick(std::vector<Type> &v, Lambda condition = Comparison::croissant<Type>) {
 
+        if (v.size() > 1) {
+
+            std::size_t pivot{v.size()/2};
+
+        }
 
 
     }
 
     template <typename Type, typename Lambda> void Optimal(std::vector<Type> &v, Lambda condition = Comparison::croissant<Type>) {
 
+        if (v.size() > 1) {
 
+            
+
+        }
 
     }
 

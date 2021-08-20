@@ -2,19 +2,23 @@
 Un exercice d'algorithmique que me suis fixé : implémenter le plus d'algorithmes en C++ (itératifs et sur place) !
 
 Les algorithmes implémentés :
+- Bogo
 - Counting
 - Selection
 - Insertion
 - Bubble
 
 Les algorithmes en cours d'implémentation :
+- Tree
 
 Les algorithmes à implémenter :
 - Cube
 - Radix
 - Bucket
 - Shell
-- Tree
+- Gnome
+- CocktailShaker
+- Bitonic
 - Heap
 - Tim
 - Merge
