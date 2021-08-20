@@ -360,35 +360,27 @@ namespace Sort {
 
         if (v.size() > 1) {
 
-            bool sorted{false};
+            for (std::size_t i{0}; i < v.size()-1; i++) {
 
-            while (!sorted) {
+                for (std::size_t j{1}; j < v.size()-1; j += 2) {
 
-                sorted = true;
+                    if (!condition(v[j], v[j+1])) {
 
-                for (std::size_t i{0}; i < v.size()-1; i += 2) {
-
-                    if (!condition(v[i], v[i+1])) {
-
-                        Type swap{v[i]};
-                        v[i] = v[i+1];
-                        v[i+1] = swap;
-
-                        sorted = false;
+                        Type swap{v[j]};
+                        v[j] = v[j+1];
+                        v[j+1] = swap;
 
                     }
 
                 }
 
-                for (std::size_t i{1}; i < v.size()-1; i += 2) {
+                for (std::size_t j{0}; j < v.size()-1; j += 2) {
 
-                    if (!condition(v[i], v[i+1])) {
+                    if (!condition(v[j], v[j+1])) {
 
-                        Type swap{v[i]};
-                        v[i] = v[i+1];
-                        v[i+1] = swap;
-
-                        sorted = false;
+                        Type swap{v[j]};
+                        v[j] = v[j+1];
+                        v[j+1] = swap;
 
                     }
 
