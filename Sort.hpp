@@ -613,63 +613,58 @@ namespace Sort {
 
     }
 
-    template <typename Type, typename Lambda> void Merge(std::vector<Type> &v, Lambda condition = Comparison::croissant<Type>, std::vector<std::vector<Type>> cuts = {}) {
+    template <typename Type, typename Lambda> void Merge(std::vector<Type> &v, Lambda condition = Comparison::croissant<Type>) {
 
         if (v.size() > 1) {
 
-            if (cuts.empty()) {
+            std::vector<Type> left, right;
 
-                std::vector<std::vector<Type>> c;
-                for (Type t : v) c.push_back({t});
+            for (std::size_t i{0}; i < v.size(); i++) {
 
-                Merge(v, condition, c);
+                if (i < v.size()/2) {
 
-            } else if (cuts.size() > 1) {
+                    left.push_back(v[i]);
 
-                std::vector<std::vector<Type>> c;
-                while (cuts.size() > 1) {
+                } else {
 
-                    c.push_back({});
-
-                    while (!cuts[0].empty() && !cuts[1].empty()) {
-
-                        if (condition(cuts[0][0], cuts[1][0])) {
-
-                            c.back().push_back(cuts[0][0]);
-                            cuts[0].erase(cuts[0].begin());
-
-                        } else {
-
-                            c.back().push_back(cuts[1][0]);
-                            cuts[1].erase(cuts[1].begin());
-
-                        }
-
-                    }
-
-                    if (!cuts[0].empty()) {
-
-                        for (Type t : cuts[0]) c.back().push_back(t);
-
-                    }
-                    
-                    if (!cuts[1].empty()) {
-
-                        for (Type t : cuts[1]) c.back().push_back(t);
-
-                    }
-
-                    cuts.erase(cuts.begin(), cuts.begin()+2);
+                    right.push_back(v[i]);
 
                 }
 
-                if (cuts.size() == 1) c.push_back({cuts[0]});
+            }
 
-                Merge(v, condition, c);
+            Sort::Merge(left, condition);
+            Sort::Merge(right, condition);
 
-            } else {
+            std::size_t index{0};
 
-                v = cuts[0];
+            while (!left.empty() && !right.empty()) {
+
+                if (condition(left[0], right[0])) {
+
+                    v.push_back(left[0]);
+                    left.erase(left.begin());
+
+                } else {
+
+                    v.push_back(right[0]);
+                    right.erase(right.begin());
+
+                }
+
+            }
+
+            while (!left.empty()) {
+
+                v.push_back(left[0]);
+                left.erase(left.begin());
+
+            }
+
+            while (!right.empty()) {
+
+                v.push_back(right[0]);
+                right.erase(right.begin());
 
             }
 

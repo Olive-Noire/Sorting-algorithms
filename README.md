@@ -8,7 +8,7 @@ Avec les propriétés suivantes :
 - Stable ou instable
 - Non parallèle
 
-Les algorithmes implémentés (11) :
+Les algorithmes implémentés (12) :
 - Bogo
 - Counting
 - Stooge
@@ -19,6 +19,7 @@ Les algorithmes implémentés (11) :
 - Gnome
 - Parity
 - Cocktail
+- Merge
 - Quick
 
 Les algorithmes en cours d'implémentation (3) :
@@ -26,7 +27,7 @@ Les algorithmes en cours d'implémentation (3) :
 - Introspective
 - Heap
 
-Les algorithmes à implémenter (8) :
+Les algorithmes à implémenter (7) :
 - Cube
 - Radix
 - Bucket
@@ -34,9 +35,8 @@ Les algorithmes à implémenter (8) :
 - Bitonic
 - Smooth
 - Tim
-- Merge
 
-Il y a aussi des lambdas de comparaisons déjà implémentées :
+Il y a aussi des lambdas de comparaisons déjà implémentées (2) :
 - Croissant
 - Decroissant
 
