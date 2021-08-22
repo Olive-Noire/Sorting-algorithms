@@ -63,3 +63,4 @@ Sources :
 - https://fr.wikipedia.org/wiki/Tri_bitonique
 - https://fr.wikipedia.org/wiki/Tri_cocktail
 - https://fr.wikipedia.org/wiki/Tri_rapide
+- https://www.youtube.com/watch?v=4VqmGXwpLqc&ab_channel=MichaelSambol
