@@ -2,10 +2,10 @@
 Un exercice d'algorithmique que me suis fixé : implémenter le plus d'algorithmes en C++ !
 
 Avec les propriétés suivantes :
-- Itératif
+- **Itératif** ou récursif
 - Sur place
 - Interne
-- Stable ou instable
+- **Stable** ou instable
 - Non parallèle
 
 Les algorithmes implémentés (12) :
