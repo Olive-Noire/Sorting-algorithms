@@ -636,7 +636,7 @@ namespace Sort {
             Sort::Merge(left, condition);
             Sort::Merge(right, condition);
 
-            std::size_t index{0};
+            v.clear();
 
             while (!left.empty() && !right.empty()) {
 
