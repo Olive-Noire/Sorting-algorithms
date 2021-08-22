@@ -3,8 +3,8 @@
 
 #include <unordered_map>
 #include <cstdlib>
-#include <vector>
-#include <cmath>
+
+#include "./NodeStructure.hpp"
 
 namespace Comparison {
 
@@ -494,7 +494,42 @@ namespace Sort {
 
         if (v.size() > 1) {
 
-            
+            Node_Structure<Type> h{v};
+
+            for (Node_Index index{0}; index < h.Size(); index++) {
+                
+                if (HasChildrens(index, h)) {
+
+                    while (condition(h[index], h[index.Left()])) {
+
+                        std::cout << "\nswap : " << h[index] << " & " << h[index.Left()];
+
+                        Type swap{h[index]};
+                        h[index] = h[index.Left()];
+                        h[index.Left()] = swap;
+
+                        if (index.HasParent()) index.value = index.Parent();
+
+                    }
+
+                    while (condition(h[index], h[index.Right()])) {
+
+                        std::cout << "\nswap : " << h[index] << " & " << h[index.Right()];
+
+                        Type swap{h[index]};
+                        h[index] = h[index.Right()];
+                        h[index.Right()] = swap;
+
+                        if (index.HasParent()) index.value = index.Parent();
+
+                    }
+
+                }
+
+            }
+
+            std::cout << std::endl << h[0];
+            for (std::size_t i{0}; i < h.Size(); i++) v[i] = h[i];
 
         }
 
@@ -512,7 +547,11 @@ namespace Sort {
 
     template <typename Type, typename Lambda> void Merge(std::vector<Type> &v, Lambda condition = Comparison::croissant<Type>) {
 
+        if (v.size() > 1) {
 
+            
+
+        }
 
     }
 

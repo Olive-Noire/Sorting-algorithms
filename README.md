@@ -8,7 +8,7 @@ Avec les propriétés suivantes :
 - Stable ou instable
 - Non parallèle
 
-Les algorithmes implémentés :
+Les algorithmes implémentés (11) :
 - Bogo
 - Counting
 - Stooge
@@ -21,18 +21,18 @@ Les algorithmes implémentés :
 - Cocktail
 - Quick
 
-Les algorithmes en cours d'implémentation :
+Les algorithmes en cours d'implémentation (3) :
 - Tree (avec définition d'une structure de donnée adéquate)
 - Introspective
+- Heap
 
-Les algorithmes à implémenter :
+Les algorithmes à implémenter (8) :
 - Cube
 - Radix
 - Bucket
 - Shell
 - Bitonic
 - Smooth
-- Heap
 - Tim
 - Merge
 
